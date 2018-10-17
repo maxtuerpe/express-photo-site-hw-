@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/photos">Photos index</a>
+        <h1>photo from <a href="/users/<%=user._id%>"><%=user.name%></a></h1>
+    </header>
+    <main>
+        <img src="<%=photo.img%>" alt=""><br>
+        <h3>About this photo:</h3> <br>
+        <p><%=photo.about%></p> <br>
+        <a href="/photos/<%=photo._id%>/edit">Edit Photo</a>
+        <form action="/photos/<%=photo._id%>?_method=delete" method="POST" value="">
+            <input type="submit" value="Delete photo">
+        </form>
+
+    </main>
+
+
+</body>
+</html>

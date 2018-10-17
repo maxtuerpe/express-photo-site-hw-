@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+    img{
+        height: 10em;
+        width: 14em;
+        object-fit:scale-down;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/users">User index</a>
+        </nav>
+        <h1><%=user.name%>'s Photos%></h1>
+    </header>
+    <main>
+        <% for (let i = 0; i < user.photos.length; i++){%>
+            <a href="/photos/<%=user.photos[i]._id%>"><img src="<%=user.photos[i].img%>" alt=""></a>
+        <%}%>
+    </main>
+    <section>
+        <form action="/users/<%=user._id%>?_method=DELETE" method="POST"><input type="submit" value="delete user"></form>
+    </section> 
+</body>
+</html>

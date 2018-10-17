@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img{
+        height: 10em;
+        width: 14em;
+        object-fit:scale-down;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/users">Users index</a>
+            <a href="/photos/new">Add a photo</a>
+        </nav>
+        <h1>Photos Index Page</h1>
+    </header>
+    <section>
+        <% for (let i = 0; i < photos.length; i++) { %>
+            <a href="/photos/<%=photos[i]._id%>">
+                <img src="<%=photos[i].img%>" alt="">
+            </a>
+        <%}%>
+    </section>
+</body>
+</html>
